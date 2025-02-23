@@ -33,7 +33,7 @@ pip install -r requirements.txt
 The tool is run from the command line:
 
 ```bash
-python src/pdf_reducer.py input.pdf -o output.pdf --chunk-size 10 --processes 4
+python main.py input.pdf -o output.pdf --chunk-size 10 --processes 4
 ```
 
 ### Parameters
