@@ -1,6 +1,5 @@
 # PDF Reducer
-
-Tool to reduce the size of PDF files using Ghostscript with parallel processing.
+Tool to reduce the size of PDF files using Ghostscript with parallel processing. Basically a ghostscript parallel wrapper.
 
 ## Summary
 This tool splits a PDF file into chunks, reduces the size of each chunk using Ghostscript, and then combines the reduced chunks into a single optimized PDF file. Built for power users who prioritize speed without sacrificing core readability.
