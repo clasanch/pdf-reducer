@@ -1,5 +1,9 @@
 ## Third-Party Licenses
 
+### Ghostscript (AGPLv3 License)
+Ghostscript is required to use this tool but not distributed with it.  
+Full license: https://www.gnu.org/licenses/agpl-3.0.txt
+
 ### PyPDF2 (BSD-3-Clause)
 ```text
 Copyright (c) 2006-2008, Mathieu Fenniak
