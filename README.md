@@ -57,3 +57,11 @@ Temporary chunk files are automatically deleted at the end of the process.
 Requires Ghostscript to be installed and accessible on the system.
 Not compatible with password-protected or DRM-protected PDFs.
 Reducing the size may affect the quality of images.
+
+## 📜 Attributions
+
+This project uses third-party components:
+- **[PyPDF2](https://github.com/py-pdf/pypdf)** © Mathieu Fenniak et al. (BSD 3-Clause License)
+- Requires **[Ghostscript](https://www.ghostscript.com/)** (AGPLv3 License)
+
+See [LICENSES.md](LICENSES.md) for full license details.
