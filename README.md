@@ -46,7 +46,7 @@ input.pdf: Input PDF file (required)
 
 ### Example Usage
 ```bash
-python src/pdf_reducer.py large_document.pdf -o optimized_document.pdf --chunk-size 5 --processes 2
+python main.py large_document.pdf -o optimized_document.pdf --chunk-size 5 --processes 2
 ```
 
 ### Expected Results
