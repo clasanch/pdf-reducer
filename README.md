@@ -3,7 +3,7 @@
 Tool to reduce the size of PDF files using Ghostscript with parallel processing.
 
 ## Summary
-This tool splits a PDF file into chunks, reduces the size of each chunk using Ghostscript, and then combines the reduced chunks into a single optimized PDF file.
+This tool splits a PDF file into chunks, reduces the size of each chunk using Ghostscript, and then combines the reduced chunks into a single optimized PDF file. Built for power users who prioritize speed without sacrificing core readability.
 
 ## Main Features
 - **Parallel Processing: ** Splits and reduces PDF chunks simultaneously to speed up the process.
@@ -57,6 +57,9 @@ Temporary chunk files are automatically deleted at the end of the process.
 Requires Ghostscript to be installed and accessible on the system.
 Not compatible with password-protected or DRM-protected PDFs.
 Reducing the size may affect the quality of images.
+
+## Why I Built This
+Despite using a powerful MacBook, I couldn't find free PDF reduction tools that properly leveraged modern multi-core processors. Existing solutions took hours to process large files - this script cuts that time from overnight to minutes while maintaining usable quality.
 
 ## 📜 Attributions
 
