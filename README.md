@@ -13,8 +13,8 @@ This tool splits a PDF file into chunks, reduces the size of each chunk using Gh
 
 ## Requirements
 - Python 3.6 or later
-- Ghostscript installed on the system
-- PyPDF2 (installed automatically with `pip`)
+- [Ghostscript](https://www.ghostscript.com/) installed on the system (**gs** command-line tool)
+- PyPDF2 (installed automatically with `pip install -r requirements.txt`)
 
 ## Installation
 1. Clone the repository:
