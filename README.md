@@ -37,10 +37,12 @@ python main.py input.pdf -o output.pdf --chunk-size 10 --processes 4
 ```
 
 ### Parameters
+```bash
 input.pdf: Input PDF file (required)
 -o/--output: Name of the output PDF file (default: reduced_final_file.pdf)
 --chunk-size: Number of pages per chunk (default: 10)
 --processes: Number of parallel processes (default: 4)
+```
 
 ### Example Usage
 ```bash
