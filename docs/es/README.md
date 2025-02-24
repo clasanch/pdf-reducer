@@ -1,4 +1,4 @@
-[English](README.md) | [Español](docs/es/README.md)  
+[English](../../README.md) | [Español](#)  
 
 # PDF Reducer 
 Herramienta para reducir el tamaño de archivos PDF usando Ghostscript con procesamiento en paralelo. Básicamente es un wrapper de Ghostscript en paralelo.
