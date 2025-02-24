@@ -63,4 +63,4 @@ A pesar de usar una MacBook potente, no pude encontrar herramientas gratuitas de
 Este proyecto utiliza componentes de terceros:
 - **[PyPDF2](https://github.com/py-pdf/pypdf)** © Mathieu Fenniak et al. (Licencia BSD 3-Cláusulas)
 - Requiere **[Ghostscript](https://www.ghostscript.com/)** (Licencia AGPLv3)
-Consulta [LICENSES.md](LICENSES.md) para ver los detalles completos de las licencias.
+Consulta [LICENSES.md](../../LICENSES.md) para ver los detalles completos de las licencias.
