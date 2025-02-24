@@ -1,0 +1,94 @@
+# PDF-Reducer
+# Copyright (C) 2025 Claudio Ignacio Sanchez Montoya
+# This file is distributed under the MIT license.
+# Claudio Sanchez <claudio@sanchez.simplelogin.com>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PDF-Reducer 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-23 23:36-0300\n"
+"PO-Revision-Date: 2025-02-23 23:47-0300\n"
+"Last-Translator: Claudio Sanchez M. <claudio@sanchez.simplelogin.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:34
+msgid "Error splitting the PDF file: {}"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:60
+msgid "Error processing {}"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:73
+msgid "Error in batch: {}"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:80
+msgid "No PDF files to combine."
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:84
+msgid "Combining {} files..."
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:93
+msgid "Processing batch {}/{}"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:97
+msgid "Progress: {}/{} files processed"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:101
+msgid "Combining final batches..."
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:110
+msgid "Merge completed successfully."
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:113
+msgid "Error merging PDF files: {}"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:126
+msgid "Could not delete temporary file {}"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:131
+msgid "Error: The file '{}' does not exist."
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:140
+msgid "Process completed. Reduced file saved as: {}"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:142
+msgid "Error in processing: {}"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:145
+msgid "Reduce the size of a PDF file"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:146
+msgid "Input PDF file"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:147
+msgid "Output PDF file"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:148
+msgid "Number of pages per chunk (default: 10)"
+msgstr ""
+
+#: /Users/claudio/Proyectos/pdf-reducer/main.py:149
+msgid "Number of parallel processes (default: 4)"
+msgstr ""
