@@ -1,3 +1,11 @@
+# Contribution Guide for PDF-Reducer
+
+Thank you for your interest in contributing to PDF-Reducer! This document provides guidelines and processes to effectively contribute to the project.
+
+## Development Model
+
+We follow a **Trunk Based Development** approach, where the main branch (`main`) must always be in a stable and deployable state. For external contributors, we use the fork-and-PR model.
+
 ## Contribution Process
 ### 1. Preparation
 - Review the [open issues](https://github.com/clasanch/pdf-reducer/issues) and find one you want to work on
