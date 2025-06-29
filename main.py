@@ -1,6 +1,6 @@
 import os
 import subprocess
-import PyPDF2
+import pymupdf
 from multiprocessing import Pool
 import glob
 import argparse
@@ -20,16 +20,16 @@ def generate_random_prefix():
 
 def split_pdf(input_file, random_prefix, chunk_size=10):
     try:
-        with open(input_file, 'rb') as file:
-            pdf_reader = PyPDF2.PdfReader(file)
-            num_pages = len(pdf_reader.pages)
-            for i in range(0, num_pages, chunk_size):
-                output_file = f'{random_prefix}_page_{i//chunk_size:04d}.pdf'
-                with open(output_file, 'wb') as out_file:
-                    pdf_writer = PyPDF2.PdfWriter()
-                    for page_num in range(i, min(i + chunk_size, num_pages)):
-                        pdf_writer.add_page(pdf_reader.pages[page_num])
-                    pdf_writer.write(out_file)
+        doc = pymupdf.open(input_file)
+        num_pages = len(doc)
+        for i in range(0, num_pages, chunk_size):
+            output_file = f'{random_prefix}_page_{i//chunk_size:04d}.pdf'
+            chunk_doc = pymupdf.open()
+            end_page = min(i + chunk_size - 1, num_pages - 1)
+            chunk_doc.insert_pdf(doc, from_page=i, to_page=end_page)
+            chunk_doc.save(output_file)
+            chunk_doc.close()
+        doc.close()
     except Exception as e:
         print(_("Error splitting the PDF file: {}").format(e))
         raise
@@ -61,13 +61,13 @@ def process_chunk(file, random_prefix):
 
 def combine_batch(pdf_files, output_file, random_prefix):
     try:
-        merger = PyPDF2.PdfMerger()
-        for pdf in pdf_files:
-            with open(pdf, 'rb') as file:
-                merger.append(file)
-        with open(output_file, 'wb') as output:
-            merger.write(output)
-        merger.close()
+        output_doc = pymupdf.open()
+        for pdf_file in pdf_files:
+            doc = pymupdf.open(pdf_file)
+            output_doc.insert_pdf(doc)
+            doc.close()
+        output_doc.save(output_file)
+        output_doc.close()
         return True
     except Exception as e:
         print(_("Error in batch: {}").format(e))
@@ -99,14 +99,14 @@ def combine_chunks(output_file, random_prefix):
         # Combine the temporary batch files
         if temp_batch_files:
             print("\n" + _("Combining final batches..."))
-            final_merger = PyPDF2.PdfMerger()
+            final_doc = pymupdf.open()
             for temp_file in temp_batch_files:
-                with open(temp_file, 'rb') as file:
-                    final_merger.append(file)
+                doc = pymupdf.open(temp_file)
+                final_doc.insert_pdf(doc)
+                doc.close()
             
-            with open(output_file, 'wb') as final_output:
-                final_merger.write(final_output)
-            final_merger.close()
+            final_doc.save(output_file)
+            final_doc.close()
             print(_("Merge completed successfully."))
         
     except Exception as e:
