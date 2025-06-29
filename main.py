@@ -21,6 +21,8 @@ def generate_random_prefix():
 def split_pdf(input_file, random_prefix, chunk_size=10):
     try:
         doc = pymupdf.open(input_file)
+        # Extract metadata from original document
+        metadata = doc.metadata
         num_pages = len(doc)
         for i in range(0, num_pages, chunk_size):
             output_file = f'{random_prefix}_page_{i//chunk_size:04d}.pdf'
@@ -30,6 +32,7 @@ def split_pdf(input_file, random_prefix, chunk_size=10):
             chunk_doc.save(output_file)
             chunk_doc.close()
         doc.close()
+        return metadata  # Return metadata for later use
     except Exception as e:
         print(_("Error splitting the PDF file: {}").format(e))
         raise
@@ -73,7 +76,7 @@ def combine_batch(pdf_files, output_file, random_prefix):
         print(_("Error in batch: {}").format(e))
         return False
 
-def combine_chunks(output_file, random_prefix):
+def combine_chunks(output_file, random_prefix, metadata=None):
     try:
         pdf_files = sorted(glob.glob(f'{random_prefix}_reduced_*.pdf'))
         if not pdf_files:
@@ -105,6 +108,10 @@ def combine_chunks(output_file, random_prefix):
                 final_doc.insert_pdf(doc)
                 doc.close()
             
+            # Apply metadata to final document if available
+            if metadata:
+                final_doc.set_metadata(metadata)
+            
             final_doc.save(output_file)
             final_doc.close()
             print(_("Merge completed successfully."))
@@ -132,11 +139,12 @@ def process_pdf(input_file, output_file, chunk_size, num_processes):
         return
     
     try:
-        split_pdf(input_file, random_prefix, chunk_size)
+        # Extract and preserve original metadata
+        metadata = split_pdf(input_file, random_prefix, chunk_size)
         with Pool(processes=num_processes) as pool:
             files = glob.glob(f'{random_prefix}_page_*.pdf')
             pool.starmap(process_chunk, [(file, random_prefix) for file in files])
-        combine_chunks(output_file, random_prefix)
+        combine_chunks(output_file, random_prefix, metadata)
         print(_("Process completed. Reduced file saved as: {}").format(output_file))
     except Exception as e:
         print(_("Error in processing: {}").format(e))
