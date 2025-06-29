@@ -15,7 +15,7 @@ This tool splits a PDF file into chunks, reduces the size of each chunk using Gh
 ## Requirements
 - Python 3.6 or later
 - [Ghostscript](https://www.ghostscript.com/) installed on the system (**gs** command-line tool)
-- PyPDF2 (installed automatically with `pip install -r requirements.txt`)
+- PyMuPDF (installed automatically with `pip install -r requirements.txt`)
 
 ## Installation
 1. Clone the repository:
@@ -62,10 +62,14 @@ Reducing the size may affect the quality of images.
 ## Why I Built This
 Despite using a powerful MacBook, I couldn't find free PDF reduction tools that properly leveraged modern multi-core processors. Existing solutions took hours to process large files - this script cuts that time from overnight to minutes while maintaining usable quality.
 
+## 📜 License
+
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPLv3)** - see the [LICENSE](LICENSE) file for details.
+
 ## 📜 Attributions
 
 This project uses third-party components:
-- **[PyPDF2](https://github.com/py-pdf/pypdf)** © Mathieu Fenniak et al. (BSD 3-Clause License)
+- **[PyMuPDF](https://github.com/pymupdf/PyMuPDF)** © Artifex Software (AGPLv3 License)
 - Requires **[Ghostscript](https://www.ghostscript.com/)** (AGPLv3 License)
 
 See [LICENSES.md](LICENSES.md) for full license details.

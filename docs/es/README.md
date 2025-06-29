@@ -15,7 +15,7 @@ Esta herramienta divide un archivo PDF en segmentos, reduce el tamaño de cada s
 ## Requisitos
 - Python 3.6 o posterior
 - [Ghostscript](https://www.ghostscript.com/) instalado en el sistema (herramienta de línea de comandos **gs**)
-- PyPDF2 (se instala automáticamente con `pip install -r requirements.txt`)
+- PyMuPDF (se instala automáticamente con `pip install -r requirements.txt`)
 
 ## Instalación
 1. Clona el repositorio:
@@ -59,8 +59,13 @@ La reducción del tamaño puede afectar la calidad de las imágenes.
 ## Por Qué Desarrollé Esto
 A pesar de usar una MacBook potente, no pude encontrar herramientas gratuitas de reducción de PDF que aprovecharan adecuadamente los procesadores multi-núcleo modernos. Las soluciones existentes tardaban horas en procesar archivos grandes - este script reduce ese tiempo de toda una noche a minutos mientras mantiene una calidad utilizable.
 
+## 📜 Licencia
+
+Este proyecto está licenciado bajo la **Licencia Pública General GNU Affero v3.0 (AGPLv3)** - consulta el archivo [LICENSE](../../LICENSE) para más detalles.
+
 ## 📜 Reconocimiento
 Este proyecto utiliza componentes de terceros:
-- **[PyPDF2](https://github.com/py-pdf/pypdf)** © Mathieu Fenniak et al. (Licencia BSD 3-Cláusulas)
+- **[PyMuPDF](https://github.com/pymupdf/PyMuPDF)** © Artifex Software (Licencia AGPLv3)
 - Requiere **[Ghostscript](https://www.ghostscript.com/)** (Licencia AGPLv3)
+
 Consulta [LICENSES.md](../../LICENSES.md) para ver los detalles completos de las licencias.
